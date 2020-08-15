@@ -1,0 +1,65 @@
+
+.container__background {
+    background: #FFFFFF;
+    box-shadow: 0 -16px 40px rgba(0, 0, 0, 0.2);
+    border-radius: 2.5rem 2.5rem 0 0;
+}
+
+.cursor:hover {
+    cursor: pointer;
+}
+
+.items_font__decor {
+    font-size: 2rem;
+    text-align: right;
+}
+
+.items_font__margin {
+    margin: 0 40rem;
+    width: 10rem;
+}
+
+.items_temp__margin {
+    margin-left: 2rem;
+}
+
+.items_upper__decor {
+    margin: 1rem 0 1rem 40rem;
+    font-size: 2rem;
+    opacity: .5;
+}
+
+.deleteButton__decor {
+    border: none;
+    background: #fff;
+    opacity: 0.3;
+    outline: none;
+}
+
+.deleteButton__decor:hover {
+    cursor: pointer;
+}
+
+.input__margin {
+    margin: 0 30rem;
+}
+
+.input__decor {
+    border: none;
+    width: 90%;
+    background: #fff;
+    padding: .5rem;
+    border-radius: .5rem;
+    box-shadow: 0 0 .5rem #606060;
+}
+
+.button__position {
+    position: relative;
+    left: -50px;
+}
+.button__position img {
+    width: 1rem;
+}
+.button__position:hover {
+    cursor: pointer;
+}

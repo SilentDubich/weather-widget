@@ -39,7 +39,7 @@ export const App: FC<PropsType> = (props) => {
         <div>
             {chooseCity ?
                 <div>
-                    <Search addCity={props.addCity} text={props.text} updText={props.updText}/>
+                    <Search setChose={setChooseCity} addCity={props.addCity} text={props.text} updText={props.updText}/>
                     {props.err.errors && props.err.errors[0]}
                     <CitiesList deleteCity={props.deleteCity} setCity={props.setCity} cities={props.cities} choose={chooseCity} setChoose={setChooseCity}/>
                 </div>

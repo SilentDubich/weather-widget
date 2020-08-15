@@ -30,6 +30,7 @@ export const addCityThunk = (city: string): ThunkCitiesType => {
             updLocalStorage('add', data.id, data)
             dispatch(citiesActions.addCity(data))
             dispatch(citiesActions.setError({}))
+            dispatch(citiesActions.setCity(data))
         } catch (e) {
             dispatch(citiesActions.setError({resultCode: 1, errors: ['Такого города нет']}))
         }
@@ -121,7 +122,7 @@ type initialStateType = typeof initialState
 export const citiesInstructions = (state = initialState, action: ActionCitiesTypes): initialStateType => {
     switch (action.type) {
         case "citiesReducer/addCity":
-            return {...state, citiesList: [...state.citiesList, action.data]}
+            return {...state, citiesList: [...state.citiesList, action.data], text: ''}
         case "citiesReducer/deleteCity":
             return {...state, citiesList: state.citiesList.filter(el => el.id !== action.id)}
         case "citiesReducer/setCity":
