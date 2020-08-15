@@ -19,6 +19,7 @@ export const CitiesList: FC<PropsType> = (props) => {
     }
 // @ts-ignore
     const cities = props.cities.sort((prev: CityType, next: CityType) => {
+        // сортирует города по алфавиту
         if (prev.name < next.name) return -1
         if (prev.name < next.name) return 1
     }).map((el: any, i: number) =>

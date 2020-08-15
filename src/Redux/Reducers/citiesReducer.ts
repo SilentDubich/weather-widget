@@ -22,7 +22,7 @@ export type ErrorType = {
     errors?: Array<string>
 }
 
-
+// добавление города в стэйт и лока сторадж, если города нет, то выбрасывается ошибка
 export const addCityThunk = (city: string): ThunkCitiesType => {
     return async (dispatch) => {
         try {
@@ -42,10 +42,12 @@ export const deleteCityThunk = (id: number): ThunkCitiesType => {
         dispatch(citiesActions.deleteCity(id))
     }
 }
+// Данная санка загружает из локал стораджа города и загружает в стэйт
 export const uploadCitiesThunk = (): ThunkCitiesType => {
     return async (dispatch) => {
         const maxPortion = 20
         let allCities = getCities()
+        // количество запросов на сервер
         let chunks = Math.ceil(allCities.length / maxPortion)
         let list: Array<CityType> = []
         for (let i = 0; i < chunks; i++) {

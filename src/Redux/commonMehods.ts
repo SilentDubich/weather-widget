@@ -1,12 +1,12 @@
 import {CityType} from "./Reducers/citiesReducer";
-
+// достает наши города из локал стораджа
 export const getCities = () => {
     let strCities: string | null = localStorage.cities && localStorage.getItem('cities')
     let allCities: Array<number> = []
     if (strCities) allCities = JSON.parse(strCities)
     return allCities
 }
-
+// переводит дату из юникс формата в формат чч:мм
 export const getTime = (time: number) => {
     let date = new Date(time * 1000);
 // Hours part from the timestamp
@@ -19,7 +19,7 @@ export const getTime = (time: number) => {
 // Will display time in 10:30:23 format
     return `${hours}:${minutes.substr(-2)}`
 }
-
+// обновляет локал сторадж в зависимости от метода
 export const updLocalStorage = (method: string, id: number, data?: CityType) => {
     let allCities: Array<number> = getCities()
     if (method === 'add') {
@@ -33,7 +33,7 @@ export const updLocalStorage = (method: string, id: number, data?: CityType) => 
     // method === 'add' ? allCities = allCities.filter( el => el.id !== id).push(data) : allCities.filter( el => el.id !== id)
     localStorage.setItem('cities', JSON.stringify(allCities))
 }
-
+// вычисляет день светового дня
 export const getDiffTime = (sunrise: string, sunset: string) => {
     let sunrArr = sunrise.split(':')
     let sunsArr = sunset.split(':')
@@ -44,7 +44,7 @@ export const getDiffTime = (sunrise: string, sunset: string) => {
     let minutes = Math.floor(differ - hours * 60)
     return `${hours}:${minutes}`
 }
-
+// переводит юникс дату в обычный формат
 export const getFullData = (unix: number) => {
     let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
     let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']

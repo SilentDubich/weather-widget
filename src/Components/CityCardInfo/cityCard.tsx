@@ -41,7 +41,6 @@ export const CityCard: FC<PropsType> = (props) => {
     const photo = background > 18 && Night || background < 4 && Night || Day
     return (
         <div>
-
             {Object.keys(props.current).length > 0 &&
                 <div>
                     <div>
