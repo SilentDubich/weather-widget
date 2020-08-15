@@ -1,0 +1,8 @@
+.container_items__displayFlex {
+    display: flex;
+}
+
+.container_items__displayCenter {
+    justify-content: center;
+    align-items: center;
+}

@@ -15,5 +15,10 @@ export const api = {
         return instance.get(`group?id=${ids}&appid=${API_KEY}&units=metric`).then(response => {
             return response.data
         })
+    },
+    getSeveralDayForecast: (id: number, count: number) => {
+        return instance.get(`forecast/daily?id=${id.toString()}&cnt=${count.toString()}&appid=${API_KEY}`).then(response => {
+            return response.data
+        })
     }
 }

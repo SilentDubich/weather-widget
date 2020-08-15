@@ -1,6 +1,7 @@
 import {AppStateType, InferActionsTypes} from "../store";
 import {ThunkAction} from "redux-thunk";
 import {api} from "../api";
+import {getCities, updLocalStorage} from "../commonMehods";
 
 
 type ActionCitiesTypes = InferActionsTypes<typeof citiesActions>
@@ -12,7 +13,8 @@ export const citiesActions = {
     setCity: (data: CityType) => ({type: 'citiesReducer/setCity', data} as const),
     uploadCities: (cities: Array<CityType>) => ({type: 'citiesReducer/uploadCities', cities} as const),
     updText: (text: string) => ({type: 'citiesReducer/updText', text} as const),
-    setError: (data: ErrorType) => ({type: 'citiesReducer/setError', data} as const)
+    setError: (data: ErrorType) => ({type: 'citiesReducer/setError', data} as const),
+    setInit: () => ({type: 'citiesReducer/setInit'} as const)
 }
 
 export type ErrorType = {
@@ -20,40 +22,6 @@ export type ErrorType = {
     errors?: Array<string>
 }
 
-const getCities = () => {
-    let strCities: string | null = localStorage.cities && localStorage.getItem('cities')
-    let allCities: Array<number> = []
-    if (strCities) allCities = JSON.parse(strCities)
-    return allCities
-}
-
-export const getTime = (time: number) => {
-    let date = new Date(time * 1000);
-// Hours part from the timestamp
-    let hours = date.getHours();
-// Minutes part from the timestamp
-    let minutes = "0" + date.getMinutes();
-// Seconds part from the timestamp
-    let seconds = "0" + date.getSeconds();
-
-// Will display time in 10:30:23 format
-    debugger
-    return hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
-}
-
-export const updLocalStorage = (method: string, id: number, data?: CityType) => {
-    let allCities: Array<number> = getCities()
-    if (method === 'add') {
-        if (data) {
-            allCities = allCities.filter(el => el !== id)
-            allCities.push(id)
-        }
-    } else {
-        allCities = allCities.filter(el => el !== id)
-    }
-    // method === 'add' ? allCities = allCities.filter( el => el.id !== id).push(data) : allCities.filter( el => el.id !== id)
-    localStorage.setItem('cities', JSON.stringify(allCities))
-}
 
 export const addCityThunk = (city: string): ThunkCitiesType => {
     return async (dispatch) => {
@@ -85,8 +53,17 @@ export const uploadCitiesThunk = (): ThunkCitiesType => {
             data.list.forEach((el: CityType) => list.push(el))
         }
         dispatch(citiesActions.uploadCities(list))
+        dispatch(citiesActions.setInit())
     }
 }
+// Метод не вошел тк данный мне апикей не подходит для запросов прогнозов на несколько дней
+// export const setCurrentCity = (id: number, count: number): ThunkCitiesType => {
+//     return async (dispatch) => {
+//         const data = api.getSeveralDayForecast(id, count)
+//         // dispatch(citiesActions.setCity(data))
+//     }
+// }
+
 export type CityType = {
     coord: {
         "lon": number
@@ -134,7 +111,9 @@ let initialState = {
     citiesList: [] as Array<CityType>,
     currentCity: {} as CityType,
     text: '',
-    errors: {} as ErrorType
+    errors: {} as ErrorType,
+    isInit: false,
+    isFetch: false
 }
 
 type initialStateType = typeof initialState
@@ -153,6 +132,8 @@ export const citiesInstructions = (state = initialState, action: ActionCitiesTyp
             return {...state, text: action.text}
         case "citiesReducer/setError":
             return {...state, errors: action.data}
+        case "citiesReducer/setInit":
+            return {...state, isInit: true}
         default:
             return state
     }
