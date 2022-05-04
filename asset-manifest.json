@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/test-sociaro/static/css/main.76adde1b.chunk.css",
-    "main.js": "/test-sociaro/static/js/main.6d4deaff.chunk.js",
-    "main.js.map": "/test-sociaro/static/js/main.6d4deaff.chunk.js.map",
+    "main.js": "/test-sociaro/static/js/main.64574826.chunk.js",
+    "main.js.map": "/test-sociaro/static/js/main.64574826.chunk.js.map",
     "runtime-main.js": "/test-sociaro/static/js/runtime-main.9ffa1dd6.js",
     "runtime-main.js.map": "/test-sociaro/static/js/runtime-main.9ffa1dd6.js.map",
     "static/js/2.1cf43f46.chunk.js": "/test-sociaro/static/js/2.1cf43f46.chunk.js",
     "static/js/2.1cf43f46.chunk.js.map": "/test-sociaro/static/js/2.1cf43f46.chunk.js.map",
     "index.html": "/test-sociaro/index.html",
-    "precache-manifest.63fc890061ad831f2b491968a958a8a9.js": "/test-sociaro/precache-manifest.63fc890061ad831f2b491968a958a8a9.js",
+    "precache-manifest.ba0191b105f9a51224d6937d6570d92a.js": "/test-sociaro/precache-manifest.ba0191b105f9a51224d6937d6570d92a.js",
     "service-worker.js": "/test-sociaro/service-worker.js",
     "static/css/main.76adde1b.chunk.css.map": "/test-sociaro/static/css/main.76adde1b.chunk.css.map",
     "static/js/2.1cf43f46.chunk.js.LICENSE.txt": "/test-sociaro/static/js/2.1cf43f46.chunk.js.LICENSE.txt",
@@ -27,6 +27,6 @@
     "static/js/runtime-main.9ffa1dd6.js",
     "static/js/2.1cf43f46.chunk.js",
     "static/css/main.76adde1b.chunk.css",
-    "static/js/main.6d4deaff.chunk.js"
+    "static/js/main.64574826.chunk.js"
   ]
 }
