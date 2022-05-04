@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/test-sociaro/static/css/main.76adde1b.chunk.css",
+    "main.js": "/test-sociaro/static/js/main.51353549.chunk.js",
+    "main.js.map": "/test-sociaro/static/js/main.51353549.chunk.js.map",
+    "runtime-main.js": "/test-sociaro/static/js/runtime-main.9ffa1dd6.js",
+    "runtime-main.js.map": "/test-sociaro/static/js/runtime-main.9ffa1dd6.js.map",
+    "static/js/2.1cf43f46.chunk.js": "/test-sociaro/static/js/2.1cf43f46.chunk.js",
+    "static/js/2.1cf43f46.chunk.js.map": "/test-sociaro/static/js/2.1cf43f46.chunk.js.map",
+    "index.html": "/test-sociaro/index.html",
+    "precache-manifest.cc41bd823b4a5158248813399953e6a2.js": "/test-sociaro/precache-manifest.cc41bd823b4a5158248813399953e6a2.js",
+    "service-worker.js": "/test-sociaro/service-worker.js",
+    "static/css/main.76adde1b.chunk.css.map": "/test-sociaro/static/css/main.76adde1b.chunk.css.map",
+    "static/js/2.1cf43f46.chunk.js.LICENSE.txt": "/test-sociaro/static/js/2.1cf43f46.chunk.js.LICENSE.txt",
+    "static/media/Spinner-1.4s-3a356a.svg": "/test-sociaro/static/media/Spinner-1.4s-3a356a.4b7d2a00.svg",
+    "static/media/day.svg": "/test-sociaro/static/media/day.34951eba.svg",
+    "static/media/humidity.svg": "/test-sociaro/static/media/humidity.98b6e7bc.svg",
+    "static/media/night.svg": "/test-sociaro/static/media/night.66e90e8d.svg",
+    "static/media/pressure.svg": "/test-sociaro/static/media/pressure.e8bba4f9.svg",
+    "static/media/sand-clock.svg": "/test-sociaro/static/media/sand-clock.84e55b96.svg",
+    "static/media/sunrise.svg": "/test-sociaro/static/media/sunrise.35e1634c.svg",
+    "static/media/sunset.svg": "/test-sociaro/static/media/sunset.6b4fc41a.svg",
+    "static/media/tag.svg": "/test-sociaro/static/media/tag.8aa75e6a.svg",
+    "static/media/wind.svg": "/test-sociaro/static/media/wind.96892bc1.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9ffa1dd6.js",
+    "static/js/2.1cf43f46.chunk.js",
+    "static/css/main.76adde1b.chunk.css",
+    "static/js/main.51353549.chunk.js"
+  ]
+}
